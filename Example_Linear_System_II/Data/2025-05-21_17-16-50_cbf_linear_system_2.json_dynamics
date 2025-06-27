@@ -1,0 +1,63 @@
+{
+    "x_dim": 2,
+    "u_dim": 2,
+    "t0": 0,
+    "t": 0,
+    "dt": null,
+    "x0": [
+        0,
+        0
+    ],
+    "x": [
+        0,
+        0
+    ],
+    "u_min": [
+        -1.5707963267948966,
+        -3.0
+    ],
+    "u_max": [
+        1.5707963267948966,
+        3.0
+    ],
+    "x_sol": [
+        [
+            0.0,
+            0.0
+        ]
+    ],
+    "u_sol": [],
+    "t_sol": [
+        0
+    ],
+    "f_attr": {
+        "type": "function",
+        "name": "f",
+        "source": "def f(self, x, u):\n    \"\"\"Implementation of the single integrator dynamics using casadi data types.\n\n    Args:\n        x (casadi.MX or casadi.SX): current state\n        u (casadi.MX or casadi.SX): control input (u0 - orientation of impact, u1 - speed)\n\n    Returns:\n        casadi.MX or casadi.SX: time derivative of system state\n    \"\"\"\n\n    u_transformed = ca.vertcat(ca.cos(u[0]) * u[1],\n                                ca.sin(u[0]) * u[1])\n\n    return ca.mtimes(self.A, x) + ca.mtimes(self.B, u_transformed)\n"
+    },
+    "str_attr": {
+        "type": "function",
+        "name": "__str__",
+        "source": "def __str__(self):\n    str = \"LinearSystem with state matrix A:\\n\"\n    str += str(self.A)  \n    str += \"\\n and input matrix B:\\n\"\n    str += str(self.B)\n    str += \"\\n for norm bounded input constraints\\n\"\n    return str\n"
+    },
+    "A": [
+        [
+            -1,
+            -2
+        ],
+        [
+            2,
+            -1
+        ]
+    ],
+    "B": [
+        [
+            1,
+            0
+        ],
+        [
+            0,
+            1
+        ]
+    ]
+}

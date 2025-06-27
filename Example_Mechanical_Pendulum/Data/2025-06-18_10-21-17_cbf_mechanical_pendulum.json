@@ -1,0 +1,58 @@
+{
+    "h": {
+        "type": "function",
+        "name": "h",
+        "source": "def h(x):\n    \"\"\"State constraint function\"\"\"\n\n    a = 1\n    b = 2\n\n    h = -np.sqrt((x[0]+x[1])**2/(2 * a**2) + (-x[0]+x[1])**2/(2 * b**2)) + 1\n\n    return h\n"
+    },
+    "terminal_condition": {
+        "type": "function",
+        "name": "cf",
+        "source": "def cf(x):\n    \"\"\"Terminal constraint function for casadi type arguments\"\"\"\n\n    cf = -np.sqrt(2 * x[0]**2 + x[1]**2 + 2*x[0]*x[1]) + 0.5\n\n    # cf = np.sqrt(x[0]**2 + x[1]**2)\n\n    return cf\n"
+    },
+    "T": 2,
+    "N": 20,
+    "dt": 0.1,
+    "gamma": -0.01,
+    "p_norm": 50,
+    "p_norm_decrement": 10,
+    "p_norm_min": 40,
+    "domain_lower_bound": [
+        -2,
+        -2
+    ],
+    "domain_upper_bound": [
+        2,
+        2
+    ],
+    "discretization": [
+        40,
+        40
+    ],
+    "warmStartInputTrajectories": [
+        [
+            [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        ]
+    ],
+    "h_offset": 1.8284271247461903
+}

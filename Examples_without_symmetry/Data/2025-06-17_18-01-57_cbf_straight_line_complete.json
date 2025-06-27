@@ -1,0 +1,35 @@
+{
+    "h": {
+        "type": "function",
+        "name": "h",
+        "source": "def h(x):\n    \"\"\"State constraint function\"\"\"\n\n    return -x[0]\n"
+    },
+    "terminal_condition": {
+        "type": "function",
+        "name": "cf",
+        "source": "def cf(x):\n    \"\"\"Terminal constraint function for casadi type arguments\"\"\"\n\n    h_grad = np.array([-1,0])\n    turning_radius = 2.8\n    orientation = ca.vertcat(ca.cos(x[2]), ca.sin(x[2]))\n\n    return ca.vertcat(ca.dot(h_grad, orientation), -x[0] - 2*turning_radius)\n"
+    },
+    "T": 7.808167079383925,
+    "N": 30,
+    "dt": 0.2602722359794642,
+    "gamma": 0.1,
+    "p_norm": 50,
+    "p_norm_decrement": 10,
+    "p_norm_min": 40,
+    "domain_lower_bound": [
+        -15.0,
+        -5.0,
+        -3.141592653589793
+    ],
+    "domain_upper_bound": [
+        15.0,
+        5.0,
+        3.141592653589793
+    ],
+    "discretization": [
+        61,
+        50,
+        41
+    ],
+    "warmStartInputTrajectories": null
+}
