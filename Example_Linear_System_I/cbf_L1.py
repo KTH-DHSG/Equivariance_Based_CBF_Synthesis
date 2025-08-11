@@ -14,7 +14,6 @@ if __name__ == "__main__":
     import os
 
     target_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Predictive_CBF_synthesis_Toolbox'))
-
     sys.path.append(target_path)
 
     import numpy as np

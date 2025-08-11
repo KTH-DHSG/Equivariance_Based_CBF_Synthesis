@@ -10,6 +10,7 @@ import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+sys.path.append(str('Predictive_CBF_synthesis_Toolbox'))
 
 import numpy as np
 import matplotlib
@@ -20,7 +21,7 @@ import matplotlib.pyplot as plt
 
 # Parameters
 cbf_file_name = '2025-06-10_16-17-12_b1_2_cbfm_1p12_equi_reduced.json'
-cbf_folder_name = r'Examples_Predicitve_CBF_synthesis_Toolbox_revisited/B1/Data'
+cbf_folder_name = r'Examples_Predicitve_CBF_Toolbox_revisited/B1/Data'
 
 cbf_offset = -2
 
