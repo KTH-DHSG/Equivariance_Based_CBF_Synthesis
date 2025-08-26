@@ -18,7 +18,7 @@ How to cite this code
 
 If you find this code usefule, please reference the following paper.
 
-Adrian Wiltz, Dimos V. Dimarogonas. "Leveraging Equivariances and Symmetries in the Control Barrier FUnction Synthesis", 2025.
+Adrian Wiltz, Dimos V. Dimarogonas. "Leveraging Equivariances and Symmetries in the Control Barrier Function Synthesis", 2025.
 
 
 Prerequisits
